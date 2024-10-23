@@ -4,8 +4,12 @@ metadata:
 components:
   - name: tools
     container:
-      image: registry.redhat.io/devspaces/udi-rhel8:3.8
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 3Gi
       env:
         - name: KUBEDOCK_ENABLED
           value: "true"
+        - name: DOCKER_HOST
+          value: 'tcp://127.0.0.1:2475'
+        - name: CONTAINER_HOST
+          value: 'tcp://127.0.0.1:2475'
