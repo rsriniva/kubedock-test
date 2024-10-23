@@ -1,4 +1,4 @@
-schemaVersion: 2.1.0
+schemaVersion: 2.2.0
 metadata:
   name: kubedock-test
 components:
@@ -11,5 +11,8 @@ components:
           value: "true"
         - name: DOCKER_HOST
           value: 'tcp://127.0.0.1:2475'
-        - name: CONTAINER_HOST
-          value: 'tcp://127.0.0.1:2475'
+      endpoints:
+        - exposure: none
+          name: kubedock
+          protocol: tcp
+          targetPort: 2475
